@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Niraj Basnet Portfolio</title>
+    <title>About - Niraj Basnet Portfolio</title>
 
     <meta charset="utf-8">
     <link rel = "icon" href ="images/icon.png" type = "image/x-icon"> 
@@ -12,27 +12,14 @@
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-
     <link rel="stylesheet" href="css/aos.css">
-
     <link rel="stylesheet" href="css/ionicons.min.css">
-    
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163247745-1"></script>
-    <script>
-    	window.dataLayer = window.dataLayer || [];
-    	function gtag(){dataLayer.push(arguments);}
-    	gtag('js', new Date());
-    	gtag('config', 'UA-163247745-1');
-    </script>
 
     <!-- Custom Modern Styles -->
     <style>
@@ -89,74 +76,54 @@
         left: 0;
       }
 
-      .hero-modern {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      .section-modern {
+        padding: 80px 0;
         min-height: 100vh;
-        display: flex;
-        align-items: center;
       }
 
-      .hero-content {
-        color: white;
-        text-align: left;
-      }
-
-      .hero-content h1 {
-        font-size: 4rem;
+      .section-title {
+        font-size: 2.5rem;
         font-weight: 700;
+        color: var(--text-primary);
         margin-bottom: 1rem;
         font-family: 'Inter', sans-serif;
       }
 
-      .hero-content h2 {
-        font-size: 1.5rem;
-        font-weight: 400;
-        margin-bottom: 2rem;
-        opacity: 0.9;
-      }
-
-      .hero-content .description {
+      .section-subtitle {
         font-size: 1.1rem;
-        margin-bottom: 2rem;
-        opacity: 0.9;
-        line-height: 1.6;
+        color: var(--text-secondary);
+        margin-bottom: 3rem;
       }
 
-      .social-links {
-        margin-top: 2rem;
-      }
-
-      .social-link {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        background: var(--primary-color);
-        color: white;
-        text-align: center;
-        line-height: 50px;
-        border-radius: 50%;
-        margin-right: 1rem;
+      .card-modern {
+        background: var(--bg-white);
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
         transition: all 0.3s ease;
-        text-decoration: none;
+        height: 100%;
       }
 
-      .social-link:hover {
-        background: var(--secondary-color);
-        transform: translateY(-3px);
-        color: white;
-        text-decoration: none;
+      .card-modern:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .bg-gradient {
+        background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
       }
 
       @media (max-width: 768px) {
-        .hero-content h1 {
-          font-size: 2.5rem;
+        .section-title {
+          font-size: 2rem;
         }
       }
     </style>
 
   </head>
   <body>
-	  
+
     <nav class="navbar navbar-expand-lg navbar-light modern-nav fixed-top" id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" href="index.html">NIRAJ BASNET</a>
@@ -177,42 +144,30 @@
 	    </div>
 	</nav>
 
-    <!-- Hero Section -->
-    <section id="home-section" class="hero-modern">
+    <!-- About Section -->
+    <section class="ftco-section ftco-no-pb" id="about-section" style="padding-top: 120px;">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-8">
-            <div class="hero-content">
-              <h1>Niraj Basnet</h1>
-              <h2>Senior Robotics Engineer at Volkswagen</h2>
-              <div style="font-size: 1.3rem; font-weight: 500; margin-bottom: 1.5rem; color: #f59e0b;">
-                "Where AI Meets Robotics: Engineering Tomorrow's Intelligent Machines"
-              </div>
-              <p class="description">
-                Bridging the gap between cutting-edge AI and autonomous robotics. I specialize in developing intelligent systems 
-                that leverage Vision-Language Models, Large Language Models, and advanced control algorithms to create robots 
-                that don't just move—they understand, reason, and adapt to complex real-world environments.
-              </p>
-              
-              <div class="social-links">
-                <a href="https://www.github.com/nirajbasnet" target="_blank" class="social-link">
-                  <span class="icon-github"></span>
-                </a>
-                <a href="https://www.linkedin.com/in/nirajbas" target="_blank" class="social-link">
-                  <span class="icon-linkedin"></span>
-                </a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=niraj.basnet2020@gmail.com&su=SUBJECT&body=BODY" target="_blank" class="social-link">
-                  <span class="icon-envelope"></span>
-                </a>
-                <a href="https://www.facebook.com/niraj.basnet.986" target="_blank" class="social-link">
-                  <span class="icon-facebook"></span>
-                </a>
-              </div>
-            </div>
-          </div>
+        <div class="row">
           <div class="col-lg-4">
-            <div class="text-center">
-              <img src="images/bg_profile_pic1.jpg" alt="Niraj Basnet" class="img-fluid rounded-circle" style="max-width: 300px; box-shadow: var(--shadow-lg);">
+            <img src="images/bg_profile_pic1.jpg" alt="Profile" class="img-fluid rounded shadow-lg">
+          </div>
+          <div class="col-lg-8 pl-lg-5">
+            <div class="about-content" style="background: white; padding: 3rem; border-radius: 15px; box-shadow: var(--shadow-lg); border-left: 5px solid var(--primary-color);">
+              <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-primary); margin-bottom: 0;">
+                I'm a Senior Robotics Engineer at Volkswagen with a passion for creating intelligent autonomous systems that bridge the gap between artificial intelligence and real-world robotics applications. My expertise spans across the entire robotics stack, from low-level control systems to high-level AI reasoning, with a particular focus on <strong>Vision-Language Models (VLMs)</strong>, <strong>Large Language Models (LLMs)</strong>, and <strong>Vision-Language-Action (VLA)</strong> models that enable robots to understand and interact with complex environments.
+              </p>
+              <br>
+              <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-primary); margin-bottom: 0;">
+                My technical foundation combines <strong>Advanced Motion Planning & Control Systems</strong> with cutting-edge AI technologies. I develop sophisticated algorithms for autonomous navigation, trajectory optimization, and real-time control while leveraging modern deep learning architectures including transformer-based models, multimodal AI systems, and reinforcement learning frameworks. This unique combination allows me to build robots that don't just execute predefined tasks, but can reason about their environment, understand natural language instructions, and adapt their behavior in real-time.
+              </p>
+              <br>
+              <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-primary); margin-bottom: 0;">
+                Throughout my career, I've worked on diverse robotic platforms including <strong>autonomous vehicles</strong>, <strong>aerial drones</strong>, <strong>humanoid robots</strong>, and <strong>industrial automation systems</strong>. I specialize in developing end-to-end AI pipelines that integrate computer vision, natural language processing, and robotic control to create truly intelligent autonomous agents. My experience includes deploying production-ready systems using <strong>ROS/ROS2</strong>, <strong>PyTorch</strong>, <strong>TensorFlow</strong>, and modern MLOps practices, with a strong emphasis on safety-critical applications and real-time performance optimization.
+              </p>
+              <br>
+              <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-primary); margin-bottom: 0;">
+                I'm particularly excited about the convergence of foundation models and robotics, working on projects that involve <strong>multimodal learning</strong>, <strong>embodied AI</strong>, and <strong>human-robot interaction</strong>. My goal is to create robots that can seamlessly integrate into human environments, understand context through multiple sensory modalities, and execute complex tasks through natural language communication—ultimately advancing the field toward more intuitive and capable autonomous systems.
+              </p>
             </div>
           </div>
         </div>
@@ -237,4 +192,4 @@
     <script src="js/main.js"></script>
     
   </body>
-</html>
+</html> 
