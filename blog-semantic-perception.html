@@ -92,56 +92,40 @@
         }
 
         .blog-meta {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            color: var(--text-secondary);
+            margin-bottom: 2rem; 
+            padding-bottom: 1rem; 
+            border-bottom: 2px solid #f0f0f0; 
+            color: #666;
         }
 
         .blog-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-right: 2rem;
         }
 
-        .blog-content {
-            background: var(--bg-white);
-            padding: 3rem 0;
-        }
-
-        .blog-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-primary);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .blog-text h2 {
-            color: var(--text-primary);
+        .blog-content h2 {
+            color: var(--primary-color);
             font-weight: 600;
             margin: 2.5rem 0 1.5rem;
             font-size: 1.8rem;
         }
 
-        .blog-text h3 {
+        .blog-content h3 {
             color: var(--text-primary);
             font-weight: 600;
             margin: 2rem 0 1rem;
             font-size: 1.4rem;
         }
 
-        .blog-text p {
+        .blog-content p {
             margin-bottom: 1.5rem;
         }
 
-        .blog-text ul {
+        .blog-content ul {
             margin: 1.5rem 0;
             padding-left: 2rem;
         }
 
-        .blog-text li {
+        .blog-content li {
             margin-bottom: 0.8rem;
         }
 
@@ -186,20 +170,24 @@
             line-height: 1.6;
         }
 
-        .back-to-blogs {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
+        .blog-back-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
             margin-bottom: 2rem;
         }
 
-        .back-to-blogs:hover {
-            color: var(--secondary-color);
+        .blog-back-btn:hover {
+            background: var(--secondary-color);
+            color: white;
             text-decoration: none;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -246,12 +234,12 @@
     <!-- Blog Header -->
     <section class="blog-header">
         <div class="container">
+            <a href="blogs.html" class="blog-back-btn">
+                <span class="icon-arrow-left" style="margin-right: 0.5rem;"></span>
+                Back to All Blogs
+            </a>
             <div class="row">
                 <div class="col-lg-12">
-                    <a href="blogs.html" class="back-to-blogs">
-                        <i class="icon-arrow-left"></i>
-                        Back to Blogs
-                    </a>
                     <h1 class="blog-title">The Next Leap: From Sensor Fusion to Semantic Perception in Robotics</h1>
                     <div class="blog-meta">
                         <span>
@@ -277,11 +265,12 @@
     </section>
 
     <!-- Blog Content -->
-    <section class="blog-content">
+    <section class="ftco-section ftco-no-pb" id="blog-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="blog-text">
+                <div class="col-lg-12 mb-5">
+                    <article class="blog-post" style="background: white; padding: 3rem; border-radius: 15px; box-shadow: var(--shadow-lg);">
+                        <div class="blog-content" style="font-size: 1.1rem; line-height: 1.8; color: var(--text-primary);">
                         <p>For decades, robotic perception relied on sensor fusion—combining LiDAR's precise 3D mapping
                             with cameras' rich visual data to navigate environments. While effective for geometric tasks
                             like obstacle avoidance, these systems struggled to answer <em>what</em> they were sensing,
@@ -341,6 +330,58 @@
                         <p>These models transform raw sensor data into actionable semantics. For instance, a robot can
                             now infer that a "cluttered desk" requires tidying by correlating visual clutter with
                             language-instilled commonsense.</p>
+
+                        <h2>The VLM Revolution: Architectures and Technical Foundations</h2>
+
+                        <p>Vision-Language Models (VLMs) represent a seismic shift in robotic perception, merging visual encoders (ViTs, ResNets) with large language models (LLMs) through novel fusion mechanisms. Let's dissect the technical innovations powering this transition.</p>
+
+                        <h3>Core Architectural Components</h3>
+                        
+                        <p><strong>Dual-Stream Encoders:</strong></p>
+                        <ul>
+                            <li><strong>Visual Backbones:</strong> Models like SigLIP 2 use ViT-G/14 (1.9B params) pretrained on 4B image-text pairs, extracting dense spatial features (e.g., 1024-D embeddings per patch).</li>
+                            <li><strong>Language Models:</strong> Frozen LLMs (e.g., LLaMA-3-8B, Phi-3) process textual prompts, while cross-attention layers align tokens like "door handle" with visual patches.</li>
+                        </ul>
+
+                        <p><strong>Fusion Mechanisms:</strong></p>
+                        <ul>
+                            <li><strong>BLIP-2's Q-Former:</strong> A lightweight transformer (188M params) acts as a "translator" between modalities. It uses learnable query tokens to extract VLM-relevant visual features, reducing computation by 54× vs. end-to-end training.</li>
+                            <li><strong>SigLIP 2's Dense Alignment:</strong> Combines contrastive loss with masked token prediction, enabling pixel-level grounding (e.g., segmenting "rusted pipe joints" in industrial inspections).</li>
+                        </ul>
+
+                        <p><strong>Latent Space Unification:</strong><br>
+                        VLMs project both modalities into a shared 768-D space using similarity matrices. For example, CLIP's cosine similarity between image and text embeddings enables zero-shot classification via prompts like "a photo of {class}".</p>
+
+                        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; border-left: 4px solid var(--primary-color);">
+                            <pre style="background: transparent; border: none; padding: 0; margin: 0; color: #495057;"><code># Simplified VLM inference pipeline (pseudo-code)  
+image_emb = vision_encoder(image)  # [batch, 197, 1024] (ViT patches)  
+text_emb = text_encoder(prompt)    # [batch, seq_len, 1024]  
+logits = image_emb @ text_emb.T     # Cross-modal similarity  
+predictions = logits.softmax(dim=-1)</code></pre>
+                        </div>
+
+                        <h3>Training Paradigms</h3>
+                        
+                        <p><strong>Multimodal Pretraining:</strong> SigLIP 2 uses a hybrid objective:</p>
+                        <ul>
+                            <li>60% contrastive loss (image-text pairs)</li>
+                            <li>20% captioning loss (generate text from images)</li>
+                            <li>20% masked autoencoding (recover corrupted image patches)</li>
+                        </ul>
+
+                        <p><strong>Domain Adaptation:</strong> Industrial VLMs fine-tune on synthetic data (e.g., NVIDIA Omniverse) to recognize robotic-specific concepts like "end-effector misalignment".</p>
+
+                        <h3>Real-Time Deployment Challenges</h3>
+                        
+                        <p>To balance accuracy and speed, modern systems adopt:</p>
+
+                        <p><strong>Model Cascades:</strong> Run small VLMs (e.g., SigLIP-ViT-B/32) for coarse detection, then activate larger models (SigLIP-1B) only for ambiguous cases.</p>
+
+                        <p><strong>Hardware-Aware Optimization:</strong></p>
+                        <ul>
+                            <li><strong>Quantization:</strong> 8-bit INT8 models reduce VRAM usage by 4× with &lt;1% accuracy drop.</li>
+                            <li><strong>Token Pruning:</strong> Discard 50% of non-salient image patches using attention scores, cutting inference latency by 2.1×.</li>
+                        </ul>
 
                         <h2>Applications: Where Semantics Redefine Robotics</h2>
 
@@ -443,7 +484,7 @@
                                 </li>
                             </ol>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
